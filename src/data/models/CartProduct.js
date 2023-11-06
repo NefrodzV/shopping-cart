@@ -1,12 +1,13 @@
 // TODO: Verify if this will work with the service not sure
+// This may need to be updated
 export default class CartProduct {
   constructor(id, title, description, url, quantity, price, total) {
     this.id = id
-    this.title = title
-    this.description = description
-    this.url = url
+    // this.title = title
+    // this.description = description
+    // this.url = url
     this.quantity = quantity
-    this.price = price
+    // this.price = price
     // This might not be needed as a parameter
     this.total = total
   }
