@@ -7,17 +7,27 @@ export default class CartProduct {
     this.url = url
     this.quantity = quantity
     this.price = price
+    // This might not be needed as a parameter
     this.total = total
   }
 
+  /**
+   * @returns {number} Id of the product in the cart
+   */
   get getId() {
     return this.id
   }
 
+  /**
+   * @returns {string} title of the product in cart
+   */
   get getTitle() {
     return this.title
   }
 
+  /**
+   * @returns {number} Quantity of the item in the cart
+   */
   get getQuantity() {
     return this.quantity
   }
@@ -30,10 +40,16 @@ export default class CartProduct {
     this.quantity = num
   }
 
+  /**
+   * @returns {number} Price of each product
+   */
   get getPrice() {
     return this.price
   }
 
+  /**
+   * @returns {number} Total price for the items in the cart
+   */
   get getTotal() {
     return this.total
   }
