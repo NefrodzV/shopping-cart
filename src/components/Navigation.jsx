@@ -4,15 +4,17 @@ import homeIcon from '../assets/icons/house.svg'
 import shoppingIcon from '../assets/icons/shopping.svg'
 import { Link } from 'react-router-dom'
 export default class Navigation extends React.Component {
-  constructor() {
-    super()
+  /**
+   * @param {number} cartCount total number of items in the cart
+   */
+  constructor(props) {
+    super(props)
   }
 
   render() {
     return (
-      <nav>
+      <nav aria-label="main">
         <ul>
-          <h2>Main Navigation</h2>
           <li>
             <Link to="/" aria-current="page">
               <img src={homeIcon} alt="Go to home page" />
@@ -31,7 +33,9 @@ export default class Navigation extends React.Component {
             <Link to="cart">
               <img src={cartIcon} alt="Go to cart page" />
               My cart
-              <span aria-label="Current items in cart">5</span>
+              <span aria-label="Current items in cart">
+                {this.props.cartCount}
+              </span>
             </Link>
           </li>
         </ul>
