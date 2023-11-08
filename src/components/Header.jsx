@@ -1,22 +1,12 @@
 import React from 'react'
-import CartIcon from '../assets/icons/cart.svg'
-
-export default class Header extends React.Component {
-  constructor() {
-    super()
-  }
-
-  render() {
-    return (
-      <header>
-        <div>Logo Img</div>
-        <div>
-          <button type="button">
-            <img src={CartIcon} alt="cart-icon" />
-          </button>
-          <div>About</div>
-        </div>
-      </header>
-    )
-  }
+import logo from '../assets/images/fashion-house.png'
+import Navigation from './Navigation'
+// Header of the pages
+export default function Header() {
+  return (
+    <header>
+      <img src={logo} alt="Fashion House image" />
+      <Navigation />
+    </header>
+  )
 }

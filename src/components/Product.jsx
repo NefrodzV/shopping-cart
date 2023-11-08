@@ -1,16 +1,10 @@
 import React from 'react'
-
-export default class Item extends React.Component {
-  constructor() {
-    super()
-  }
-
-  render() {
-    return (
-      <div>
-        <img src="" alt="" />
-        <p></p>
-      </div>
-    )
-  }
+// Should represent the dom element item
+export default function Product() {
+  return (
+    <div>
+      <img src="" alt="" />
+      <p></p>
+    </div>
+  )
 }
