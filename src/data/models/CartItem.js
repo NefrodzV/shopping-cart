@@ -1,6 +1,6 @@
 // TODO: Verify if this will work with the service not sure
 // This may need to be updated
-export default class CartProduct {
+export default class CartItem {
   constructor(id, title, description, url, quantity, price, total) {
     this.id = id
     // this.title = title

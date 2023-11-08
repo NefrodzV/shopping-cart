@@ -1,5 +1,5 @@
 // Represents the shop product in the shop section given by the service
-export default class ShopProduct {
+export default class ShopItem {
   /**
    * @param {number} id Identifier of the product
    * @param {string} title Name of the product

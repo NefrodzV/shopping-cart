@@ -3,7 +3,7 @@ import CartProduct from './CartProduct'
 // Represents the cart for the user
 export default class Cart {
   /**
-   * @construct
+   *
    * @param {number} userId represent the user id
    * @param {string} date  represents the date in format yyyy-mm-dd
    * @param {Array} products represents an array of products by the user
