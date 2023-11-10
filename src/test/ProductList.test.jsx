@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { screen, render } from '@testing-library/react'
 import Navigation from '../components/Navigation'
 import { BrowserRouter } from 'react-router-dom'
@@ -16,7 +16,6 @@ describe('Product List', () => {
         title: 'My second title'
       }
     ]
-
     render(<ProductList products={productsMock} />, { wrapper: BrowserRouter })
     const productsList = screen.getByRole('list')
 
