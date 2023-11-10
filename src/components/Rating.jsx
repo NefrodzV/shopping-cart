@@ -3,6 +3,7 @@ import '../index.css'
 
 export default function Rating({ rating }) {
   const ratingRef = useRef(null)
+  const [fullWidth, setFullWidth] = useState()
   // Witdth of the element
   const [width, setWidth] = useState('auto')
   // Width will be change depending on the rating
@@ -14,11 +15,10 @@ export default function Rating({ rating }) {
 
   // When I save in the code the width changes but in
   useEffect(() => {
-    console.log(width)
-
-    setWidth(transformWidth())
-    console.log('Updating Rating component')
-  }, [])
+    if (width === 'auto') {
+      setWidth(transformWidth())
+    }
+  }, [ratingRef.current])
 
   return (
     <div
