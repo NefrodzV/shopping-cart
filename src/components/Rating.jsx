@@ -18,7 +18,7 @@ export default function Rating({ rating }) {
     if (width === 'auto') {
       setWidth(transformWidth())
     }
-  }, [ratingRef.current])
+  }, [])
 
   return (
     <div
