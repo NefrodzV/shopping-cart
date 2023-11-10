@@ -14,8 +14,29 @@
   -webkit-text-size-adjust: 100%;
 }
 
+
 img {
   width: 50px;
+}
+
+a {
+  color: wheat;
+  text-decoration: none;
+}
+a.active {
+  
+  color: red;
+}
+
+.rating {
+  font-size: 2rem;
+  color: yellow;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.rating::before{
+  content: '★★★★★'; 
 }
 /* a {
   font-weight: 500;
