@@ -10,7 +10,7 @@ describe('Navigation', () => {
   })
 
   it('Shop anchor has correct href path', () => {
-    render(<Navigation cartCount={3} />, { wrapper: BrowserRouter })
+    render(<Navigation cartCount={0} />, { wrapper: BrowserRouter })
     const shopAnchor = screen.getByRole('link', { name: /Shop/i })
     expect(shopAnchor).not.toBe(null)
     expect(shopAnchor).toBeInTheDocument()
@@ -19,7 +19,7 @@ describe('Navigation', () => {
 
   it('Cart anchor has the correct href path', () => {
     render(<Navigation cartCount={3} />, { wrapper: BrowserRouter })
-    const cartAnchor = screen.getByRole('link', { name: /My cart/i })
+    const cartAnchor = screen.getByRole('link', { name: /My cart*?/i })
     expect(cartAnchor).not.toBe(null)
     expect(cartAnchor).toHaveAttribute('href', '/cart')
   })
