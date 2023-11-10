@@ -2,30 +2,30 @@ import React from 'react'
 import cartIcon from '../assets/icons/cart.svg'
 import homeIcon from '../assets/icons/house.svg'
 import shoppingIcon from '../assets/icons/shopping.svg'
-import { Link } from 'react-router-dom'
-export default function Navigation() {
+import { NavLink } from 'react-router-dom'
+export default function Navigation({ cartCount }) {
   return (
     <nav aria-label="main">
       <ul>
         <li>
-          <Link to="/" aria-current="page">
+          <NavLink to="/" aria-current="page">
             <img src={homeIcon} alt="Go to home page" />
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="shop">
+          <NavLink to="shop">
             <img src={shoppingIcon} alt="Go to shop page" />
             Shop
-          </Link>
+          </NavLink>
         </li>
         <li>
           {/* Will be visually hidden unless you are in the shopping page  probably*/}
-          <Link to="cart">
+          <NavLink to="cart">
             <img src={cartIcon} alt="Go to cart page" />
             My cart
-            <span aria-label="Current items in cart"></span>
-          </Link>
+            <span aria-label="Current items in cart">{cartCount}</span>
+          </NavLink>
         </li>
       </ul>
     </nav>
