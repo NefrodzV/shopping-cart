@@ -3,7 +3,7 @@ import { screen, render } from '@testing-library/react'
 import Navigation from '../components/Navigation'
 import { BrowserRouter } from 'react-router-dom'
 import ProductList from '../components/ProductList'
-import ProductData from '../data/models/Product'
+import ProductData from '../data/model/Product'
 
 describe('Product List', () => {
   it('Render a list appropiately', () => {
