@@ -15,7 +15,7 @@ export default class Product {
     this.price = price
     this.description = description
     this.category = category
-    this.imgUrl = url
+    this.url = url
     this.rating = rating
   }
 
