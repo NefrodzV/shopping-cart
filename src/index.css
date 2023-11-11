@@ -2,6 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   /* line-height: 1.5;
   font-weight: 400; */
+  font-size: 1.25rem;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -38,8 +39,41 @@ a.active {
 .rating::before{
   content: '★★★★★'; 
 }
+
 .tag {
+  position: relative;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  clip-path: polygon(
+      0% 15%,     /* top left */
+      20% 0%,     /* top left */
+      100% 0%,    /* top right */
+      100% 0%,   /* top right */
+      100% 100%,  /* bottom right */
+      95% 100%,  /* bottom right */
+      20% 100%,   /* bottom left */
+      0 85%  
+  );
+  padding: 0px 48px;
+  background-color:  red;
+}
+
+.tag::before {
+  left: 10%;
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
   background-color: white;
+
+}
+
+.tag-percent{
+  
+ text-align: center;
 }
 
 .tag.show {
