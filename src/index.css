@@ -38,6 +38,13 @@ a.active {
 .rating::before{
   content: '★★★★★'; 
 }
+.tag {
+  background-color: white;
+}
+
+.tag.show {
+  background-color: aquamarine;
+}
 /* a {
   font-weight: 500;
   color: #646cff;
