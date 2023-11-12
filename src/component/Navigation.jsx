@@ -1,7 +1,7 @@
 import React from 'react'
-import cartIcon from '../assets/icons/cart.svg'
-import homeIcon from '../assets/icons/house.svg'
-import shoppingIcon from '../assets/icons/shopping.svg'
+import cartIcon from '../asset/icons/cart.svg'
+import homeIcon from '../asset/icons/house.svg'
+import shoppingIcon from '../asset/icons/shopping.svg'
 import { NavLink } from 'react-router-dom'
 export default function Navigation({ cartCount }) {
   return (
