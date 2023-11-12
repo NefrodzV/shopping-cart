@@ -13,8 +13,8 @@ export default function DiscountSection({ products }) {
   return (
     <section>
       <h2>
-        All products {products.length > 0 ? products[0].getCategory : ''}about
-        are on discount for limited time
+        All products {products.length > 0 ? products[0].getCategory : ''} are on
+        discount for limited time!
       </h2>
       <CoundownTimer />
       <ul>{products.map((product) => createDiscountProduct(product))}</ul>
