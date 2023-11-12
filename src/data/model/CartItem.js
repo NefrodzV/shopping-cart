@@ -1,57 +1,42 @@
 // TODO: Verify if this will work with the service not sure
 // This may need to be updated
-export default class CartItem {
-  constructor(id, title, description, url, quantity, price, total) {
-    this.id = id
-    // this.title = title
-    // this.description = description
-    // this.url = url
+import Product from './Product'
+export default class CartItem extends Product {
+  /**
+   * @constructor
+   * @param {number} id Identifier
+   * @param {string} title Name
+   * @param {number} price number price
+   * @param {number} discount percent of discount
+   * @param {string} description description
+   * @param {string} brand item brand
+   * @param {string} category category
+   * @param {string} url image url
+   * @param {number} rating number rating
+   * @param {number} quantity quantity to buy
+   */
+  constructor(
+    id,
+    title,
+    price,
+    discount,
+    description,
+    brand,
+    category,
+    url,
+    rating,
+    quantity
+  ) {
+    super(id, title, price, discount, description, brand, category, url, rating)
     this.quantity = quantity
-    // this.price = price
-    // This might not be needed as a parameter
-    this.total = total
   }
 
-  /**
-   * @returns {number} Id of the product in the cart
-   */
-  get getId() {
-    return this.id
-  }
-
-  /**
-   * @returns {string} title of the product in cart
-   */
-  get getTitle() {
-    return this.title
-  }
-
-  /**
-   * @returns {number} Quantity of the item in the cart
-   */
   get getQuantity() {
     return this.quantity
   }
 
-  /**
-   * @param {number} num Update the quantity in the cart product
-   */
-
-  set setQuatity(num) {
-    this.quantity = num
-  }
-
-  /**
-   * @returns {number} Price of each product
-   */
-  get getPrice() {
-    return this.price
-  }
-
-  /**
-   * @returns {number} Total price for the items in the cart
-   */
+  /**@todo Update to calculate with the discount */
   get getTotal() {
-    return this.total
+    return this.quantity * this.price
   }
 }
