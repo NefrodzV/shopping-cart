@@ -1,4 +1,5 @@
 export default function ProductoModal({ product }) {
+  const [total, setTotal] = useState('0.0')
   /**@todo Make the listeners fucntionality */
   const close = () => {
     console.log('close called')
@@ -37,7 +38,7 @@ export default function ProductoModal({ product }) {
               <option value={5}>5</option>
             </select>
           </label>
-          <p>{}</p>
+          <p>{total}</p>
           <button type="button" onClick={submit}>
             Add to cart
           </button>

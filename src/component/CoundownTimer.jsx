@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 
 export default function CoundownTimer() {
-  console.log('render')
+  /**@todo Add some accesibility to this**/
+  /**@todo Make a array of dates for the timer to work*/
   const [time, setTime] = useState('')
   const now = new Date()
   const futureDate = new Date('Nov 14,2023 00:00:00')
@@ -12,7 +13,6 @@ export default function CoundownTimer() {
   const MILLI_IN_A_DAY = MILLI_IN_A_HOUR * 24
 
   const formatTime = () => {
-    console.log('running format time')
     const days = Math.floor(countDown / MILLI_IN_A_DAY)
     const hours = Math.floor((countDown / MILLI_IN_A_HOUR) % 24)
     const minutes = Math.floor((countDown / MILLI_IN_A_MINUTE) % 60)

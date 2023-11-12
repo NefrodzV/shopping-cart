@@ -14,7 +14,7 @@ export default function Product({
     <li className="product-card" onClick={listener}>
       <p className="product-title">{title}</p>
       <img className="product-image" src={url} alt={description} />
-      <p className="product-description">{price}</p>
+      <p className="product-price">{price}</p>
       <Tag discount={discount} show={hasDiscount}></Tag>
     </li>
   )
