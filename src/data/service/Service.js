@@ -14,6 +14,22 @@ class Service {
     return call.json()
   }
 
+  async getAllProducts() {
+    const url = 'https://dummyjson.com/products'
+    let data = null
+    try {
+      const response = await fetch(url)
+      if (!response.ok) {
+        throw new Error('[FETCH] Getting products failed' + response.status)
+      }
+      data = response.json()
+    } catch (error) {
+      console.log('[Error] Error fetching products' + error)
+    }
+
+    return data
+  }
+
   // Get the carts of the user
   getUserCarts() {}
 
