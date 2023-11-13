@@ -30,5 +30,5 @@ export default function CoundownTimer() {
     }
   })
 
-  return <p className="discount-time">{time}</p>
+  return <p className="discount-time center-text medium-font">{time}</p>
 }
