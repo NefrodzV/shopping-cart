@@ -5,7 +5,6 @@ import Home from './page/Home'
 import Layout from './page/Layout'
 import Cart from './page/Cart'
 import service from './data/service/Service'
-import Util from './Util'
 
 // Router class to handle the links in the app
 export default function Router() {
@@ -19,14 +18,18 @@ export default function Router() {
           element: <Home />,
           loader: async () => {
             // Getting the random category
-            const response =
-              await service.getProductsFromCategory('home-decoration')
+            const response = service.getProductsFromCategory('home-decoration')
             return response
           }
         },
         {
           path: 'shop',
-          element: <Shop />
+          element: <Shop />,
+          loader: async () => {
+            const response = service.getAllProducts()
+
+            return response
+          }
         },
         {
           path: 'cart',
