@@ -46,7 +46,7 @@ export default class Product {
   }
 
   get getDiscount() {
-    return this.discount
+    return Math.floor(this.discount)
   }
 
   get getDescription() {
