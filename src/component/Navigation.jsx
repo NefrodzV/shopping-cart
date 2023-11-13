@@ -6,24 +6,28 @@ import { NavLink } from 'react-router-dom'
 export default function Navigation({ cartCount }) {
   return (
     <nav aria-label="main">
-      <ul>
+      <ul className="nav-list">
         <li>
-          <NavLink to="/" aria-current="page">
-            <img src={homeIcon} alt="Go to home page" />
+          <NavLink to="/" aria-current="page" className="nav-link">
+            <img className="nav-icon" src={homeIcon} alt="Go to home page" />
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="shop">
-            <img src={shoppingIcon} alt="Go to shop page" />
+          <NavLink to="shop" className="nav-link">
+            <img
+              className="nav-icon"
+              src={shoppingIcon}
+              alt="Go to shop page"
+            />
             Shop
           </NavLink>
         </li>
         <li>
           {/* Will be visually hidden unless you are in the shopping page  probably*/}
-          <NavLink to="cart">
-            <img src={cartIcon} alt="Go to cart page" />
-            My cart
+          <NavLink to="cart" className="nav-link">
+            <img className="nav-icon" src={cartIcon} alt="Go to cart page" />
+            Cart
             <span aria-label="Current items in cart">{cartCount}</span>
           </NavLink>
         </li>
