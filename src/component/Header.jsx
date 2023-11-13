@@ -5,7 +5,7 @@ import Navigation from './Navigation'
 export default function Header() {
   return (
     <header>
-      <img src={logo} alt="Fashion House image" />
+      <img src={logo} alt="Fashion House image" className="logo" />
       <Navigation />
     </header>
   )
