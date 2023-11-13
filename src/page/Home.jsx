@@ -13,11 +13,12 @@ export default function Home() {
     if (productsState.length === 0) {
       const copy = [...productsState]
       data.products.forEach((object) => {
+        console.log(object.discountPercentage)
         const product = new Product(
           object.id,
           object.title,
           object.price,
-          object.discount,
+          object.discountPercentage,
           object.description,
           object.brand,
           object.category,
