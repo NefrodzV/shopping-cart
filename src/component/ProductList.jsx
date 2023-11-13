@@ -3,23 +3,16 @@ import Product from './Product'
 
 // Represents the item list
 export default function ProductList({ products, productListener }) {
+  console.log(products)
   const createProduct = (product) => {
     return (
-      <Product
-        key={product.getId}
-        title={product.getTitle}
-        price={product.getPrice}
-        description={product.getDescription}
-        url={product.getUrl}
-        listener={productListener}
-      />
+      <Product key={product.id} product={product} listener={productListener} />
     )
   }
 
   return (
-    <div>
-      <h2>Products</h2>
-      <ul>{products.map((product) => createProduct(product))}</ul>
-    </div>
+      <ul className="product-list">
+        {products.map((product) => createProduct(product))}
+      </ul>
   )
 }
