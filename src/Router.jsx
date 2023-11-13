@@ -19,10 +19,8 @@ export default function Router() {
           element: <Home />,
           loader: async () => {
             // Getting the random category
-            const category = Util.getRandomCategory()
-            Util.category = category
-            console.log(category)
-            const response = await service.getProductsFromCategory(category)
+            const response =
+              await service.getProductsFromCategory('home-decoration')
             return response
           }
         },
