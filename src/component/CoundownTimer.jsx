@@ -5,7 +5,7 @@ export default function CoundownTimer() {
   /**@todo Make a array of dates for the timer to work*/
   const [time, setTime] = useState('')
   const now = new Date()
-  const futureDate = new Date('Nov 14,2023 00:00:00')
+  const futureDate = new Date('Nov 20,2023 00:00:00')
   const countDown = futureDate.getTime() - now.getTime()
   const MILLI_IN_A_SECOND = 1000
   const MILLI_IN_A_MINUTE = MILLI_IN_A_SECOND * 60
