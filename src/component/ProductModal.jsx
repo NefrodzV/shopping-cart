@@ -1,9 +1,9 @@
-export default function ProductoModal({ product }) {
+import { useEffect, useRef, useState } from 'react'
+
+export default function ProductModal({ product, show, closeListener }) {
+  const dialogRef = useRef(null)
   const [total, setTotal] = useState('0.0')
   /**@todo Make the listeners fucntionality */
-  const close = () => {
-    console.log('close called')
-  }
 
   const onSelected = () => {
     console.log('onSelected called')
@@ -13,20 +13,24 @@ export default function ProductoModal({ product }) {
     console.log('on submit called')
   }
 
+  useEffect(() => {
+    show ? dialogRef.current.showModal() : dialogRef.current.close()
+  }, [show])
+
   return (
-    <dialog className="modal">
+    <dialog ref={dialogRef} className="modal">
       <section>
         <header className="modal-header">
-          <h3>{product.getTitle}</h3>
-          <button type="button" onClick={close}>
+          <h3>{product.title}</h3>
+          <button type="button" onClick={closeListener}>
             Close
           </button>
         </header>
         <div className="modal-content">
-          <img src={product.getUrl} alt={product.getDescription} />
-          <p>{product.getBrand}</p>
-          <p>{product.getDescription}</p>
-          <p>{product.getPrice}</p>
+          <img src={product.url} alt={product.description} />
+          <p>{product.brand}</p>
+          <p>{product.description}</p>
+          <p>{product.price}</p>
           <label htmlFor="quatity-select">
             Enter the quantity you want to buy:
             <select id="quantity-select" onClick={onSelected}>
