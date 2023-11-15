@@ -22,8 +22,8 @@ export default function Shop() {
           object.title,
           object.price,
           object.discountPercentage,
+          object.description,
           object.brand,
-          object.category,
           object.category,
           object.images[0],
           object.rating
@@ -35,7 +35,7 @@ export default function Shop() {
   }, [])
 
   const productListener = (product) => {
-    console.log(product)
+    setProduct(product)
     setActive(true)
   }
 
