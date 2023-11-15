@@ -31,6 +31,7 @@ nav {
   margin-inline: auto 0
 }
 img {
+  display: block;
   width: 100%;
 }
 
@@ -139,10 +140,6 @@ a.active {
  text-align: center;
 }
 
-.tag.show {
-  
-}
-
 .product-list {
   list-style-type: none;
   display: flex;
@@ -150,6 +147,7 @@ a.active {
   gap: 16px;
   justify-content: center;
 }
+
 .product-card {
   cursor: pointer;
   border-radius: 5px;
@@ -178,12 +176,96 @@ a.active {
   width: 100%;
 }
 
+/**Animate the dialog element by default whe open it changed the display */
 .modal {
+  width: min(500px, 90%);
+  border: none;
+  box-shadow: 0px 0px 3px #350;
+  padding: 0;
+  text-transform: capitalize;
 }
 
-.modal.show {
-  transform: scale(1);
+.modal[open] {
+  
 }
+
+.modal::backdrop {
+  background-color: #333;
+  opacity: 90%;
+}
+.modal-header > h3 {
+  margin-right: 32px;
+}
+.modal-header button {
+  color: white;
+  background-color: #350;
+  cursor: pointer;
+  font-size: 1.3rem;
+  margin: auto;
+  height: min-content;
+  margin-inline: auto 0;
+}
+.modal-img {
+  object-fit: contain;
+  height: 300px;
+  aspect-ratio: 1 /1;
+}
+.modal-content {
+  position: relative;
+  padding: 16px;
+}
+
+.modal p {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.modal p::before {
+  position: absolute;
+  top: -20px;
+  font-weight: bold;
+}
+
+.modal-brand::before {
+  content: "Brand";
+  
+}
+
+.modal-description::before {
+  content: "Description";
+  
+}
+
+.modal-price::before {
+  content: 'Price'; 
+}
+
+.modal-total::before {
+  content: 'Total';
+}
+
+.modal label {
+  font-weight: bold;
+}
+.modal label select {
+  font-size: 1rem;
+  display: block;
+  padding-inline: 16px;
+}
+
+.modal-content button {
+  cursor: pointer;
+  background-color: #350;
+  text-transform: uppercase;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+
 
 /* Helper classes**/
 .flex {
