@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useLayoutEffect } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import '../index.css'
 
 export default function Rating({ rating }) {
