@@ -1,9 +1,9 @@
 import CoundownTimer from './CoundownTimer'
 import Tag from './Tag'
+import { useEffect, useState } from 'react'
 
 export default function DiscountSection({ products }) {
   const createDiscountProduct = (product) => {
-    console.log(product.getDiscount)
     return (
       <li key={product.getId} className="product">
         <img
@@ -16,15 +16,15 @@ export default function DiscountSection({ products }) {
       </li>
     )
   }
+
   return (
     <section className="discount-section center-inline width-default">
       <h2 className="center-text big-font">
-        All products {products.length > 0 ? products[0].getCategory : ''} are on
-        discount for limited time!
+        All products home decoration are on discount for limited time!
       </h2>
       <CoundownTimer />
       <ul className="discount-list flex">
-        {products.map((product) => createDiscountProduct(product))}
+        {products?.map((product) => createDiscountProduct(product))}
       </ul>
     </section>
   )
