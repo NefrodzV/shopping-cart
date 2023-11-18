@@ -17,7 +17,7 @@ export default function ProductModal({ product, show, closeListener }) {
   }
 
   useEffect(() => {
-    setTotal(quantity * product.price)
+    setTotal(quantity * product?.price)
   }, [product, quantity])
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function ProductModal({ product, show, closeListener }) {
     <dialog ref={dialogRef} className="modal">
       <section>
         <header className="modal-header">
-          <h3>{product.title}</h3>
+          <h3>{product?.title}</h3>
           <button type="button" onClick={closeListener}>
             x
           </button>
@@ -36,12 +36,12 @@ export default function ProductModal({ product, show, closeListener }) {
         <div className="modal-content">
           <img
             className="modal-img big-border"
-            src={product.url}
-            alt={product.description}
+            src={product?.url}
+            alt={product?.description}
           />
-          <p className="modal-brand">{product.brand}</p>
-          <p className="modal-description">{product.description}</p>
-          <p className="modal-price">&#x24; {product.price}</p>
+          <p className="modal-brand">{product?.brand}</p>
+          <p className="modal-description">{product?.description}</p>
+          <p className="modal-price">&#x24; {product?.price}</p>
           <label htmlFor="quatity-select">
             Quantity:
             <select id="quantity-select" onClick={onSelected}>
