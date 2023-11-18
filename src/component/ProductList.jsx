@@ -15,7 +15,7 @@ export default function ProductList({ products, productListener }) {
 
   return (
     <ul className="product-list">
-      {products.map((product) => createProduct(product))}
+      {products?.map((product) => createProduct(product))}
     </ul>
   )
 }
