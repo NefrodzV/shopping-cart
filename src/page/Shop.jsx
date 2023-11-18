@@ -7,31 +7,28 @@ import ProductModal from '../component/ProductModal'
 // Shop page that will contain the items list
 export default function Shop() {
   const data = useLoaderData()
-  const [products, setProducts] = useState([])
-  const [product, setProduct] = useState(
-    new Product(0, '', '0', '0', '', '', '', '', '0')
-  )
+  const [products, setProducts] = useState(null)
+  const [product, setProduct] = useState(null)
+
   const [isActive, setActive] = useState(false)
 
   useEffect(() => {
-    if (products.length === 0) {
-      const copy = []
-      data.products.forEach((object) => {
-        const product = new Product(
-          object.id,
-          object.title,
-          object.price,
-          object.discountPercentage,
-          object.description,
-          object.brand,
-          object.category,
-          object.images[0],
-          object.rating
-        )
-        copy.push(product)
-      })
+    const copy = []
+    data.products.forEach((object) => {
+      const product = new Product(
+        object.id,
+        object.title,
+        object.price,
+        object.discountPercentage,
+        object.description,
+        object.brand,
+        object.category,
+        object.images[0],
+        object.rating
+      )
+      copy.push(product)
       setProducts(copy)
-    }
+    })
   }, [])
 
   const productListener = (product) => {
@@ -40,7 +37,6 @@ export default function Shop() {
   }
 
   const closeModal = () => {
-    console.log('close modal called')
     setActive(false)
   }
   return (
