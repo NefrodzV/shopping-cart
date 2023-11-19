@@ -2,6 +2,7 @@ import CartList from '../component/CartList'
 import CartItem from '../data/model/CartItem'
 import localStorage from '../data/service/LocalStorage'
 import { useState, useEffect } from 'react'
+
 export default function Cart() {
   const [items, setItems] = useState([])
   const [total, setTotal] = useState('0')
@@ -39,7 +40,7 @@ export default function Cart() {
   return (
     <section className="cart">
       <h2 className="cart-heading space-between flex">
-        My Cart
+        My Cart (Total: &#x24;{total})
         <button className="checkout-button secondary-button border-radius-5 md-padding">
           Checkout
         </button>
