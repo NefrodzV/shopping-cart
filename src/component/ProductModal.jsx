@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-
+import localStorage from '../data/service/LocalStorage'
+import CartItem from '../data/model/CartItem'
+import Rating from './Rating'
 export default function ProductModal({ product, show, closeListener }) {
   const dialogRef = useRef(null)
   const [total, setTotal] = useState()
@@ -9,11 +11,31 @@ export default function ProductModal({ product, show, closeListener }) {
   const onSelected = (e) => {
     const value = e.target.value
     setQuantity(value)
-    console.log('On selected called')
   }
 
   const submit = () => {
-    console.log('on submit called')
+    const cartItem = new CartItem(
+      product.id,
+      product.title,
+      product.price,
+      product.discount,
+      product.description,
+      product.description,
+      product.category,
+      product.url,
+      product.rating,
+      parseInt(quantity)
+    )
+    const index = localStorage.itemIsInStorage(cartItem.id)
+    // if the item exist just update it
+    console.log('index ' + index)
+    if (index !== null) {
+      console.log('index to update' + index)
+      localStorage.update(cartItem, index)
+      return
+    }
+    //If the item doesnt exist just add it to storage
+    localStorage.add(cartItem)
   }
 
   useEffect(() => {
