@@ -1,20 +1,31 @@
 export default function CartItem({ item, editListener, cancelListener }) {
+  console.log(item)
   return (
-    <li>
-      <h2>{item.getTitle}</h2>
-      <img src={item.getUrl} alt={item.getDescription} />
+    <li className="cart-item big-border flex">
+      <img
+        className="default-img cart-item-img"
+        src={item.url}
+        alt={item.description}
+      />
       <div>
-        <p>{item.getBrand}</p>
-        <p>{item.getDescription}</p>
-        <p>{item.getPrice} each unit</p>
-        <p>Ordered: {item.getQuantity}</p>
-        <p>Total: {item.getTotal}</p>
-        <button type="button" onClick={cancelListener}>
-          Cancel
-        </button>
-        <button type="button" onClick={editListener}>
-          Edit
-        </button>
+        <h2>{item.title}</h2>
+        <p>{item?.brand}</p>
+        <p>{item?.description}</p>
+        <p>Price per unit: &#x24;{item?.price}</p>
+        <p>Ordered: {item?.quantity}</p>
+        <p>Total: &#x24;{item?.price * item?.quantity}</p>
+        <div className="container flex">
+          <button
+            className="prime-button"
+            type="button"
+            onClick={cancelListener}
+          >
+            Delete
+          </button>
+          <button className="prime-button" type="button" onClick={editListener}>
+            Edit
+          </button>
+        </div>
       </div>
     </li>
   )
