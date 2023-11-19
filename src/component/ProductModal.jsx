@@ -20,7 +20,7 @@ export default function ProductModal({ product, show, closeListener }) {
       product.price,
       product.discount,
       product.description,
-      product.description,
+      product.brand,
       product.category,
       product.url,
       product.rating,
