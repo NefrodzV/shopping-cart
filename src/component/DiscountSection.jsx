@@ -18,7 +18,7 @@ export default function DiscountSection({ products }) {
   }
 
   return (
-    <section className="discount-section center-inline width-default">
+    <section className="discount-section center-inline width-default white-text">
       <h2 className="center-text big-font">
         All products home decoration are on discount for limited time!
       </h2>

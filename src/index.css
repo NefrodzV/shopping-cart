@@ -332,6 +332,10 @@ button:hover {
   margin-inline: auto;
 }
 
+.white-text {
+  color: white;
+}
+
 .big-padding {
   padding: 48px;
 }
